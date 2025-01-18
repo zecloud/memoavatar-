@@ -302,8 +302,8 @@ class UNetMidBlock3DCrossAttn(nn.Module):
         audio_embedding=None,
         emotion=None,
         uc_mask=None,
-        is_new_audio=True,
-        update_past_memory=False,
+        is_new_audio=False,
+        update_past_memory=True,
     ):
         hidden_states = self.resnets[0](hidden_states, temb)
         for i, (attn, resnet, audio_module, motion_module) in enumerate(

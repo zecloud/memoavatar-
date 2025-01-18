@@ -394,8 +394,8 @@ class UNet3DConditionModel(ModelMixin, ConfigMixin):
         mid_block_additional_residual: Optional[torch.Tensor] = None,
         uc_mask: Optional[torch.Tensor] = None,
         return_dict: bool = True,
-        is_new_audio=True,
-        update_past_memory=False,
+        is_new_audio=False,
+        update_past_memory=True,
     ) -> Union[UNet3DConditionOutput, Tuple]:
         # By default samples have to be AT least a multiple of the overall upsampling factor.
         # The overall upsampling factor is equal to 2 ** (# num of upsampling layears).
